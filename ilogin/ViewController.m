@@ -54,7 +54,7 @@
 }
 - (void) connectionGamedonia{
      
-    //Connection code to Gamedonia SDK
+    //Initializing the Gamedonia SDK
     [Gamedonia initialize:@"9ee64267-ee3b-4b5f-9700-af4ac6a08ba9"
                    secret:@"ba60368055d8907f41078598a5bd8fc2"
              apiServerUrl:@"http://api.gamedonia.com"
@@ -64,10 +64,10 @@
 
 - (IBAction)sendLogin:(id)sender {
     //User Credentials
-    
     NSString *user = usernameTextField.text;
     NSString *pass = passwordTextField.text;
     
+    // Login user using email with Gamedonia SDK
     [[Gamedonia users] loginUserWithEmail:user
                                  password:pass
                                  callback:^(BOOL success) {
